@@ -10,7 +10,7 @@ module AnywayAppConfig
 
   class Config < ::Anyway::Config
     class_attribute :nested_config_class, instance_accessor: false
-    class_attribute :skip_freeze_classes, instance_accessor: false, default: []
+    class_attribute :skip_freeze_classes, instance_accessor: false, default: [].freeze
 
     class << self
       def attribute(name, type: nil, array: false, default: nil, required: false, &block)
@@ -87,7 +87,10 @@ module AnywayAppConfig
 
     def deep_freeze_values!
       deep_freeze_value(values)
+      self
     end
+
+    alias deep_freeze! deep_freeze_values!
 
     def load(overrides = nil)
       overrides = overrides.deep_stringify_keys if overrides.is_a?(::Hash)
