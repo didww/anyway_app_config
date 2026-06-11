@@ -1,5 +1,8 @@
 # AnywayAppConfig
 
+[![CI](https://github.com/senid231/anyway_app_config/actions/workflows/ci.yml/badge.svg)](https://github.com/senid231/anyway_app_config/actions/workflows/ci.yml)
+[![Gem Version](https://badge.fury.io/rb/anyway_app_config.svg)](https://rubygems.org/gems/anyway_app_config)
+
 Schema-driven application config built on top of [`anyway_config`][anyway_config].
 
 `anyway_config` does the heavy lifting of loading values from YAML and ENV.
